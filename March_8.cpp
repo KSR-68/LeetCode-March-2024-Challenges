@@ -1,6 +1,29 @@
 // 3005. Count Elements With Maximum Frequency
 #include <bits/stdc++.h>
 using namespace std;
+
+//Initial Solution
+/* int maxFrequencyElements(vector<int> &nums)
+{
+    unordered_map<int, int> freq;
+    int sum = 0;
+    int max_freq = 0;
+    for (auto i : nums)
+    {
+        freq[i]++;
+        max_freq = max(max_freq, freq[i]);
+    }
+    for (auto i : freq)
+    {
+        if (i.second == max_freq)
+        {
+            sum += max_freq;
+        }
+    }
+    return sum;
+} */
+
+//One Pass Solution
 int maxFrequecyElements(vector<int> &nums)
 {
     unordered_map<int, int> freq;
