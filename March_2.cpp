@@ -17,7 +17,7 @@ Output: [4,9,9,49,121]
 #include <bits/stdc++.h>
 using namespace std;
 // Brute Force O(NlogN)
-vector<int> sortedSquares(vector<int> &nums)
+/* vector<int> sortedSquares(vector<int> &nums)
 {
     vector<int> ans;
     for (auto num : nums)
@@ -27,7 +27,7 @@ vector<int> sortedSquares(vector<int> &nums)
     }
     sort(ans.begin(), ans.end());
     return ans;
-}
+} */
 
 // Better O(N) and O(N) Space
 vector<int> sortedSquares(vector<int> &nums)
