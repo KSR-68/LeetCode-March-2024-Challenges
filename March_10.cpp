@@ -67,12 +67,15 @@ vector<int> Intersection(vector<int> &nums1, vector<int> &nums2)
 }
 
 // Approach 3 (Make Both Arrays Sets)(Major LeetCode 0ms Solutions)
-vector<int> Intersection(vector<int>& nums1,vector<int>& nums2){
-    unordered_set<int> s1(nums1.begin(),nums1.end());
-    unordered_set<int> s2(nums2.begin(),nums2.end());
+vector<int> Intersection(vector<int> &nums1, vector<int> &nums2)
+{
+    unordered_set<int> s1(nums1.begin(), nums1.end());
+    unordered_set<int> s2(nums2.begin(), nums2.end());
     vector<int> res;
-    for(int num : s1){
-        if(s2.find(num) != s2.end()){
+    for (int num : s1)
+    {
+        if (s2.find(num) != s2.end())
+        {
             res.emplace_back(num);
         }
     }
