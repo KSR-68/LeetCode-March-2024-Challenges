@@ -15,9 +15,9 @@ Output: [9,4]
 Explanation: [4,9] is also accepted.
 */
 
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
+#include<vector>
 using namespace std;
-
 // Approach 1 - Using HashMap (Taking Frequency as decider)
 
 /* vector<int> Intersection(vector<int> &nums1, vector<int> &nums2)
@@ -42,7 +42,7 @@ using namespace std;
 // Approach 2 - Using a HashSet (Two Pointer Single Pass Approach)
 // We Have to sort both the arrays in this approach
 
-vector<int> Intersection(vector<int> &nums1, vector<int> &nums2)
+/* vector<int> Intersection(vector<int> &nums1, vector<int> &nums2)
 {
     unordered_set<int> s;
     sort(nums1.begin(), nums1.end());
@@ -64,10 +64,10 @@ vector<int> Intersection(vector<int> &nums1, vector<int> &nums2)
             i++;
     }
     return ans;
-}
+} */
 
 // Approach 3 (Make Both Arrays Sets)(Major LeetCode 0ms Solutions)
-vector<int> Intersection(vector<int>& nums1,vector<int>& nums2){
+/* vector<int> Intersection(vector<int>& nums1,vector<int>& nums2){
     unordered_set<int> s1(nums1.begin(),nums1.end());
     unordered_set<int> s2(nums2.begin(),nums2.end());
     vector<int> res;
@@ -78,6 +78,28 @@ vector<int> Intersection(vector<int>& nums1,vector<int>& nums2){
     }
 
     return res;
+} */
+
+vector<int> Intersection(vector<int>& nums1, vector<int>& nums2){
+    vector<int> ans;
+    sort(nums1.begin(),nums1.end());
+    sort(nums2.begin(),nums2.end());
+    int i = 0, j = 0;
+
+    while(i<nums1.size() && j<nums2.size()){
+        if(nums1[i] == nums2[j]){
+            if(i>0 && nums1[i] == nums1[i-1]){
+                i++;
+                continue;
+            }
+            ans.emplace_back(nums1[i]);
+            i++;
+            j++;
+        }
+        else if(nums1[i]<nums2[j]) i++;
+        else j++;
+    }
+    return ans;
 }
 
 int main()
