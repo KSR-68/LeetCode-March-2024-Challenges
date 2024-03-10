@@ -16,7 +16,6 @@ Explanation: [4,9] is also accepted.
 */
 
 #include<bits/stdc++.h>
-#include<vector>
 using namespace std;
 // Approach 1 - Using HashMap (Taking Frequency as decider)
 
